@@ -2,7 +2,8 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_nested import routers
 from django.urls import path, include
 from .views import UserViewSet, TodoViewSet, PostViewSet, AlbumViewSet, CommentViewSet, PhotoViewSet
-from .views import TodoViewSetDefault, PostViewSetDefault, AlbumViewSetDefault, CommentViewSetDefault, PhotoViewSetDefault
+from .views import TodoViewSetDefault, PostViewSetDefault, AlbumViewSetDefault,\
+    CommentViewSetDefault, PhotoViewSetDefault
 
 
 router = DefaultRouter()

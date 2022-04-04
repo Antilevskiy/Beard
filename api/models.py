@@ -54,5 +54,7 @@ class Photo(models.Model):
     id = models.IntegerField(primary_key=True)
     album_id = models.ForeignKey(Album, on_delete=models.CASCADE)
     title = models.CharField(max_length=50, default='')
-    url = models.TextField(max_length=50, default='https://placebeard.it/480/640')
-    thumbnail_url = models.TextField(max_length=50, default='https://placebeard.it/120/160')
+    url = models.TextField(max_length=50,
+                           default='https://placebeard.it/480/640')
+    thumbnail_url = models.TextField(max_length=50,
+                                     default='https://placebeard.it/120/160')

@@ -3,7 +3,8 @@ from rest_framework import viewsets
 from django.shortcuts import HttpResponse
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
-from .serializers import UserSerializer, TodoSerializer, PostSerializer, AlbumSerializer, CommentSerializer, PhotoSerializer
+from .serializers import UserSerializer, TodoSerializer, PostSerializer,\
+    AlbumSerializer, CommentSerializer, PhotoSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):

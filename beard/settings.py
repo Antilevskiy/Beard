@@ -1,6 +1,5 @@
-from os import path
+from os import environ
 from pathlib import Path
-import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -16,7 +15,7 @@ SECRET_KEY = 'django-insecure-(k__%aedxyd-y$qc#d)q7kua0-9fms5_!tc*q3lye!j8ggx8l4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0"]
 
 
 # Application definition
@@ -42,12 +41,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+if '/app' in environ['HOME']:
+    import django_heroku
+    django_heroku.settings(locals())
+
 MIDDLEWARE_CLASSES = (
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
     'whitenoise.middleware.WhiteNoiseMiddleware',)
 
-django_heroku.settings(locals())
 
 ROOT_URLCONF = 'beard.urls'
 
